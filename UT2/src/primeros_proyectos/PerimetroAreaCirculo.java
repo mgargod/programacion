@@ -17,7 +17,7 @@ public class PerimetroAreaCirculo {
 		Scanner teclado = new Scanner( System.in ); //creamos el objeto teclado para introducción de datos
 		
 		int radio; //declaración de variable entera;
-		double PI = 3.1415927; //declaración y asignación de valor de constante PI
+		final double PI = 3.1415927; //declaración y asignación de valor de constante PI
 		double perimetro,
 			   area; //declaración de variables reales;
 				

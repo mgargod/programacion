@@ -16,21 +16,22 @@ public class KilogramosOnzas {
 
 		Scanner teclado = new Scanner( System.in ); //creamos el objeto teclado para introducción de datos
 		
-		double kilogramos,
-			   onzas; //declaración de variables reales;
+		double masaOnzas,
+			   masaKilogramos; //declaración de variables reales;
+		final double ONZAS = 35.2739619; //declaración y valor de constante transformación a onzas
 
 							
 		System.out.print( "Introduzca los kilogramos (puede ser con decimales): ");	//petición de kilogramos
 		
-		kilogramos = teclado.nextDouble(); //asignación de lectura de teclado a kilogramos
+		masaKilogramos = teclado.nextDouble(); //asignación de lectura de teclado a masaKilogramos
 		
 		teclado.close(); //cerramos introducción de datos por teclado
 		
-		onzas = kilogramos * 35.2739619; //asignamos resultado de la operación a onzas
+		masaOnzas = masaKilogramos * ONZAS; //asignamos resultado de la operación a masaOnzas
 				
 		System.out.println( "------RESULTADOS------"); //imprime cabecera "Resultados"
 		
-		System.out.println( kilogramos + " kilogramos equivalen a " + onzas + " onzas." ); //imprime transformacion kg-oz
+		System.out.println( masaKilogramos + " kilogramos equivalen a " + masaOnzas + " onzas." ); //imprime transformacion kg-oz
 	
 	} //fin del método main
 
