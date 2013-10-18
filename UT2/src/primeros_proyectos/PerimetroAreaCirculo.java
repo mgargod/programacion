@@ -8,6 +8,8 @@ package primeros_proyectos;
 //ASIGNATURA: Programación
 //CURSO: Primero DAW
 
+//18/10/2013-ACTUALIZACIÓN: Utilizamos la clase Math para crear constante PI.
+
 import java.util.Scanner; //importamos la clase Scanner para usarla en la aplicación
 
 public class PerimetroAreaCirculo {
