@@ -32,7 +32,7 @@ public class TiempoDescargaArchivo {
 		
 		teclado.close(); //cerramos entradas por teclado.
 		
-		tiempo = tamaño * 1.048576 / velocidad; //asignación del resultado de la operación a tiempo
+		tiempo = tamaño * 8 * 1.048576 / velocidad; //asignación del resultado de la operación a tiempo
 				
 		System.out.println( "------RESULTADOS------"); //impresión de cabecera "Resultados"
 		
