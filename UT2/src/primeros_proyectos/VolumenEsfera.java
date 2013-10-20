@@ -9,6 +9,7 @@ package primeros_proyectos;
 //CURSO: Primero DAW
 
 //18/10/2013-ACTUALIZACIÓN: Utilizamos la clase Math para la constante PI.
+//20/10/2013-ACTUALIZACIÓN: Utilizamos Math.pow y printf.
 
 import java.util.Scanner; //importamos la clase Scanner para usarla en la aplicación
 
@@ -28,11 +29,11 @@ public class VolumenEsfera {
 		
 		teclado.close(); //cerramos introducción de datos por teclado
 		
-		volumen = 4 * PI * radio * radio * radio / 3; //asignamos resultado de la operación a volumen
+		volumen = 4 * PI * Math.pow(radio, 3) / 3; //asignamos resultado de la operación a volumen
 		//Podríamos haber utilizado el Math.pow(radio, 3) para elevar el radio al cubo		
 		System.out.println( "------RESULTADOS------"); //imprime cabecera "Resultados"
 		
-		System.out.println( "Volumen: " + volumen ); //imprime volumen
+		System.out.printf( "Volumen: %.2f", volumen); //imprime volumen con formato coma flotante redondeo 2 decimales.
 	
 	} //fin del método main
 
