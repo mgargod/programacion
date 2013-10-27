@@ -1,6 +1,6 @@
-package primeros_proyectos;
+package operadores;
 
-public class Operadores {
+public class OperadoresAritmeticos {
 
 	public static void main(String[] args) {
 
