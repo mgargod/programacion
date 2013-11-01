@@ -77,14 +77,14 @@ public class Coche {
 			boolean b3 = xMeta <= coche3.obtenerAbscisa();
 
 			
-			hayGanador = b1 || b2 || b3; //si uno de los tres ha superado la meta, hayGanador = true;*/
+			hayGanador = b1 || b2 || b3; //si uno de los tres ha superado la meta, hayGanador = true;
 						
 			contador = contador + 0.5; //incrementamos el contador para aumentar las coordenadas
 			
 			
 		}//FIN DE BUCLE DE REPETICION 
-
 		
+			
 			
 	}
 

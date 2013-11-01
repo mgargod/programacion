@@ -19,98 +19,129 @@ import graphics.Text;
 
 public class Euribor {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
+		//VARIABLES INICIALES PARA GEOMETRIA
+		
+		int numeroMeses = 10;
+		int espacioEntreMeses = 10;
+		int anchoMes = 100;
+		int origenX = 300;
+		int origenY = 850;
+		int finEjeX = origenX + numeroMeses * anchoMes + ( numeroMeses - 1 ) * espacioEntreMeses;
+		int finEjeY = origenY - 800;
+		
+		
+		//VALORES EURIBOR 2013 * 1000
+		
+		final int ENERO = 575;
+		final int FEBRERO = 594;
+		final int MARZO = 545;
+		final int ABRIL = 528;
+		final int MAYO = 484;
+		final int JUNIO = 507;
+		final int JULIO = 525;
+		final int AGOSTO = 542;
+		final int SEPTIEMBRE = 543;
+		final int OCTUBRE = 541;
+		
+		//INTERVALO DE TIEMPO PARA REPRESENTACION ANIMADA POR MESES
+		
+		final int INTERVALO = 600;
+			
+				
 		//CREACION DE BARRAS ENERO - OCTUBRE
 
-		Rectangle enero = new Rectangle( 200, 300, 100, 575 );
-		Rectangle febrero = new Rectangle( 310, 300 - ( 594 - 575 ), 100, 594 );
-		Rectangle marzo = new Rectangle( 420, 300 + ( 575 - 545 ), 100, 545 );
-		Rectangle abril = new Rectangle( 530, 300 + ( 575 - 528 ), 100, 528 );
-		Rectangle mayo = new Rectangle( 640, 300 + ( 575 - 484 ), 100, 484 );
-		Rectangle junio = new Rectangle( 750, 300 + ( 575 - 507 ), 100, 507 );
-		Rectangle julio = new Rectangle( 860, 300 + ( 575 - 525 ), 100, 525 );
-		Rectangle agosto = new Rectangle( 970, 300 + ( 575 - 542 ), 100, 542 );
-		Rectangle septiembre = new Rectangle( 1080, 300 + ( 575 - 543 ), 100, 543 );
-		Rectangle octubre = new Rectangle( 1190, 300 + ( 575 - 539 ), 100, 539 ); //A fecha 25/10/2013
+		Rectangle enero = new Rectangle( origenX, origenY - ENERO, anchoMes, ENERO );
+		
+		Rectangle febrero = new Rectangle( origenX + anchoMes + espacioEntreMeses, origenY - FEBRERO,
+										   anchoMes, FEBRERO);
+		Rectangle marzo = new Rectangle( origenX + 2 * anchoMes + 2 * espacioEntreMeses, origenY - MARZO,
+				                           anchoMes, MARZO);
+		Rectangle abril = new Rectangle( origenX + 3 * anchoMes + 3 * espacioEntreMeses, origenY - ABRIL,
+				                           anchoMes, ABRIL);
+		Rectangle mayo = new Rectangle( origenX + 4 * anchoMes + 4 * espacioEntreMeses, origenY - MAYO,
+				                           anchoMes, MAYO);
+		Rectangle junio = new Rectangle( origenX + 5 * anchoMes + 5 * espacioEntreMeses, origenY - JUNIO,
+				                           anchoMes, JUNIO);
+		Rectangle julio = new Rectangle( origenX + 6 * anchoMes + 6 * espacioEntreMeses, origenY - JULIO,
+				                           anchoMes, JULIO);
+		Rectangle agosto = new Rectangle( origenX + 7 * anchoMes + 7 * espacioEntreMeses, origenY - AGOSTO,
+				                           anchoMes, AGOSTO);
+		Rectangle septiembre = new Rectangle( origenX + 8 * anchoMes + 8 * espacioEntreMeses, origenY - SEPTIEMBRE,
+				                           anchoMes, SEPTIEMBRE);
+		Rectangle octubre = new Rectangle( origenX + 9 * anchoMes + 9 * espacioEntreMeses, origenY - OCTUBRE,
+				                           anchoMes, OCTUBRE);
 		
 		
 		//CREACION DE EJES DEL GRAFICO
 		
-		Line ejeHorizontal = new Line( 170, 875, 1300, 875 );
-		Line ejeVertical = new Line( 170, 50, 170, 875 );
+		Line ejeHorizontal = new Line( origenX, origenY, finEjeX, origenY );
+		Line ejeVertical = new Line( origenX, origenY, origenX, finEjeY );
 		
 		
 		//CREACION DE DIVISIONES DEL EJE VERTICAL
 		
-		Line valor250 = new Line( 170 - 10, 875 - 250, 170 + 10, 875 - 250 );
-		Line valor500 = new Line( 170 - 10, 875 - 500, 170 + 10, 875 - 500 );
-		Line valor750 = new Line( 170 - 10, 875 - 750, 170 + 10, 875 - 750 );
+		Line valor250 = new Line( origenX - 10, origenY - 250, finEjeX, origenY - 250 );
+		Line valor500 = new Line( origenX - 10, origenY - 500, finEjeX, origenY - 500 );
+		Line valor750 = new Line( origenX - 10, origenY - 750, finEjeX, origenY - 750 );
 		
 		
 		//CREACION DE TEXTO DE VALORES DEL EJE VERTICAL
 		
-		Text textoValor0 = new Text( 170 - 50, 875 - 10, "0,00" );
-		Text textoValor250 = new Text( 170 - 50, 875 - 10 - 250, "0,250" );
-		Text textoValor500 = new Text( 170 - 50, 875 - 10 - 500, "0,500" );
-		Text textoValor750 = new Text( 170 - 50, 875 - 10 - 750, "0,750" );
+		Text textoValor0 = new Text( origenX - 50, origenY - 10, "0,00" );
+		Text textoValor250 = new Text( origenX - 50, origenY - 10 - 250, "0,250" );
+		Text textoValor500 = new Text( origenX - 50, origenY - 10 - 500, "0,500" );
+		Text textoValor750 = new Text( origenX - 50, origenY - 10 - 750, "0,750" );
 		
-		
-		
+				
 		//CREACION DE TEXTO DE LEYENDA DE EJE VERTICAL
 		
-		Text textoValorEuribor = new Text( 170 - 140, 875 - 10 - 800, "VALOR EURIBOR 2013" );
+		Text textoValorEuribor = new Text( origenX - 140, origenY - 10 - 800, "VALOR EURIBOR 2013" );
 		
 		
 		//CREACION DE TEXTO DE MESES ENERO-OCTUBRE EJE HORIZONTAL
 		
-		Text textoEnero = new Text( 200, 890, "ENERO" );
-		Text textoFebrero = new Text( 310, 890, "FEBRERO" );
-		Text textoMarzo = new Text( 420, 890, "MARZO" );
-		Text textoAbril = new Text( 530, 890, "ABRIL" );
-		Text textoMayo = new Text( 640, 890, "MAYO" );
-		Text textoJunio = new Text( 750, 890, "JUNIO" );
-		Text textoJulio = new Text( 860, 890, "JULIO" );
-		Text textoAgosto = new Text( 970, 890, "AGOSTO" );
-		Text textoSeptiembre = new Text( 1080, 890, "SEPTIEMBRE" );
-		Text textoOctubre = new Text( 1190, 890, "OCTUBRE" );
+		Text textoEnero = new Text( origenX, origenY + 20, "ENERO" );
+		Text textoFebrero = new Text( origenX + anchoMes + espacioEntreMeses, origenY + 20, "FEBRERO" );
+		Text textoMarzo = new Text( origenX + 2 * anchoMes + 2 * espacioEntreMeses, origenY + 20, "MARZO" );
+		Text textoAbril = new Text( origenX + 3 * anchoMes + 3 * espacioEntreMeses, origenY + 20, "ABRIL" );
+		Text textoMayo = new Text( origenX + 4 * anchoMes + 4 * espacioEntreMeses, origenY + 20, "MAYO" );
+		Text textoJunio = new Text( origenX + 5 * anchoMes + 5 * espacioEntreMeses, origenY + 20, "JUNIO" );
+		Text textoJulio = new Text( origenX + 6 * anchoMes + 6 * espacioEntreMeses, origenY + 20, "JULIO" );
+		Text textoAgosto = new Text( origenX + 7 * anchoMes + 7 * espacioEntreMeses, origenY + 20, "AGOSTO" );
+		Text textoSeptiembre = new Text( origenX + 8 * anchoMes + 8 * espacioEntreMeses, origenY + 20, "SEPTIEMBRE" );
+		Text textoOctubre = new Text( origenX + 9 * anchoMes + 9 * espacioEntreMeses, origenY + 20, "OCTUBRE" );
 		
 		
 		//ESTABLECER COLOR DE BARRAS Y LLAMAR AL METODO PARA QUE LAS DIBUJE CON RELLENO
 				
 		enero.setColor(Color.BLUE);
-		enero.fill();
+		
 		febrero.setColor(Color.CYAN);
-		febrero.fill();
+		
 		marzo.setColor(Color.YELLOW);
-		marzo.fill();
+		
 		abril.setColor(Color.GRAY);
-		abril.fill();
+		
 		mayo.setColor(Color.GREEN);
-		mayo.fill();
+		
 		junio.setColor(Color.LIGHT_GRAY);
-		junio.fill();
+		
 		julio.setColor(Color.MAGENTA);
-		julio.fill();
+		
 		agosto.setColor(Color.ORANGE);
-		agosto.fill();
+		
 		septiembre.setColor(Color.PINK);
-		septiembre.fill();
+		
 		octubre.setColor(Color.RED);
-		octubre.fill();
+		
 		
 		
 		//LLAMAR AL METODO PARA DIBUJAR EJES
 		
 		ejeHorizontal.draw();
 		ejeVertical.draw();
-		
-		
-		//LLAMAR AL METODO PARA DIBUJAR DIVISIONES DE EJE VERTICAL
-		
-		valor250.draw();
-		valor500.draw();
-		valor750.draw();
 		
 		
 		//LLAMAR AL METODO PARA DIBUJAR TEXTO DE VALORES DE EJE VERTICAL
@@ -126,18 +157,66 @@ public class Euribor {
 		textoValorEuribor.draw();
 		
 		
-		//LLAMAR AL METODO PARA DIBUJAR TEXTO DE MESES ENERO-OCTUBRE EJE HORIZONTAL
+		//REPRESENTACION DE VALORES MENSUALES CON ANIMACION
 		
+		Thread.sleep(INTERVALO);
+		
+		enero.fill();
 		textoEnero.draw();
+		
+		Thread.sleep(INTERVALO);
+		
+		febrero.fill();
 		textoFebrero.draw();
+		
+		Thread.sleep(INTERVALO);
+		
+		marzo.fill();
 		textoMarzo.draw();
+		
+		Thread.sleep(INTERVALO);
+		
+		abril.fill();
 		textoAbril.draw();
+		
+		Thread.sleep(INTERVALO);
+		
+		mayo.fill();
 		textoMayo.draw();
+		
+		Thread.sleep(INTERVALO);
+		
+		junio.fill();
 		textoJunio.draw();
+		
+		Thread.sleep(INTERVALO);
+		
+		julio.fill();
 		textoJulio.draw();
+		
+		Thread.sleep(INTERVALO);
+		
+		agosto.fill();
 		textoAgosto.draw();
+		
+		Thread.sleep(INTERVALO);
+		
+		septiembre.fill();
 		textoSeptiembre.draw();
+		
+		Thread.sleep(INTERVALO);
+		
+		octubre.fill();
 		textoOctubre.draw();
+		
+		//REPRESENTACION DE DIVISIONES DE EJE VERTICAL
+		
+		Thread.sleep(INTERVALO);
+		valor250.draw();
+		Thread.sleep(INTERVALO);
+		valor500.draw();
+		Thread.sleep(INTERVALO);
+		valor750.draw();
 	}
 
 }

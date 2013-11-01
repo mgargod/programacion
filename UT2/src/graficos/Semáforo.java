@@ -1,7 +1,10 @@
 package graficos;
 
-//ESTA APLICACIÓN REALIZA MEDIANTE GRÁFICOS LA SIMULACIÓN DE
-//UN SEMÁFORO
+//ESTA APLICACION REALIZA MEDIANTE GRAFICOS LA SIMULACION DE
+//UN SEMAFORO, PIDIENDO AL USUARIO QUE INTRODUZCA EL VALOR
+//QUE HA DE TENER EL DIAMETRO DE LOS DISCOS LUMINOSOS.
+//LA GEOMETRIA DEL SEMAFORO SE DEFINE EN FUNCION DEL
+//DIAMETRO DE LOS DISCOS.
 
 //Se utilizan las librerías "Simple Java Graphics"
 //de Mr.Cay S. Horstmann (http://horstmann.com/sjsu/graphics/)
@@ -12,6 +15,7 @@ package graficos;
 //ASIGNATURA: Programación
 //CURSO: Primero DAW
 
+import javax.swing.JOptionPane;
 import graphics.Color;
 import graphics.Ellipse;
 import graphics.Rectangle;
@@ -21,45 +25,59 @@ public class Semáforo {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		//DECLARACIÓN DE CONSTANTES
+		//DECLARACION DE CONSTANTES
 		
 		final long RETARDO_COLORES = 3000; 
 		final long PARPADEO = 600;
 		
+		//DECLARACION DE VARIABLES PARA COORDENADAS RELATIVAS
 		
-		//OBJETO semaforo: coordenadas, medidas, color, rellenar.
+		double diametroDisco;
+		double ancho;
+		double alto;
+		double centroX;
+		double centroY;
 		
-		Rectangle semaforo = new Rectangle( 100, 50, 100, 290 );
+		//INTRODUCCION DEL VALOR DEL DIAMETRO DE LOS DISCOS
+			
+		String introducirDiametro = "Introduzca el diámetro de los discos luminosos (entre 80 y 150): ";
+		diametroDisco = ( Double.parseDouble( JOptionPane.showInputDialog( introducirDiametro ) ) );
 		
-		semaforo.setColor(Color.GRAY);
 		
-		semaforo.fill();
+		//GEOMETRIA DE LA CAJA DEL SEMAFORO
+		
+		ancho = diametroDisco * 4 / 3;
+		alto = diametroDisco * 11 / 3;
+		centroX = 2 * diametroDisco;
+		centroY = 2 * diametroDisco;
+		
+		
+		
+		//OBJETO cajaSemaforo: coordenadas, medidas, color, rellenar.
+		
+		Rectangle cajaSemaforo = new Rectangle( centroX-ancho/2, centroY-alto/2, ancho, alto ); 
+		cajaSemaforo.setColor(Color.GRAY);
+		cajaSemaforo.fill();
 				
 		
 		//OBJETO poste: coordenadas, medidas, color, rellenar.
 		
-		Rectangle poste = new Rectangle( 140, 340, 20, 400 );
-		
+		Rectangle poste = new Rectangle( centroX-ancho/10, centroY + alto/2, ancho/5, alto ); 
 		poste.setColor(Color.GRAY);
-		
 		poste.fill();
 		
 		
-
-		
 		//OBJETO circuloVerde: coordenadas, medidas, color, rellenar.
 		
-		Ellipse circuloVerde = new Ellipse( 105, 245, 90, 90 );
-		
+		Ellipse circuloVerde = new Ellipse( centroX - diametroDisco/2, centroY + diametroDisco * 2 / 3, diametroDisco, diametroDisco ); 
 		circuloVerde.setColor(Color.GREEN);
-		
 		circuloVerde.fill();
 		
 		
 		//OBJETO circuloAmarillo: coordenadas, medidas, color, rellenar. Efecto "parpadeo"
+		//Esto se puede mejorar con un blucle de repetición
 		
-		Ellipse circuloAmarillo = new Ellipse( 105, 150, 90, 90 );
-		
+		Ellipse circuloAmarillo = new Ellipse( centroX - diametroDisco/2, centroY - diametroDisco/2, diametroDisco, diametroDisco ); 
 		circuloAmarillo.setColor(Color.YELLOW);
 		
 		Thread.sleep(RETARDO_COLORES); //Retardo para "desaparición Verde" - "aparición Amarillo"
@@ -95,7 +113,7 @@ public class Semáforo {
 		
 		//OBJETO circuloRojo: coordenadas, medidas, color, rellenar. Efecto "parpadeo"
 		
-		Ellipse circuloRojo = new Ellipse( 105, 55, 90, 90 );
+		Ellipse circuloRojo = new Ellipse( centroX - diametroDisco/2, centroY - diametroDisco * 5 / 3, diametroDisco, diametroDisco ); 
 		
 		circuloRojo.setColor(Color.RED);
 		
@@ -112,11 +130,11 @@ public class Semáforo {
 		
 		//OBJETO aviso: coordenadas, texto (cadena de caracteres)
 		
-		Text aviso = new Text(220,200,"Corte del suministro eléctrico. Cierre la ventana");
+		Text aviso = new Text(centroX + ancho, centroY, "Corte del suministro eléctrico. Cierre la ventana");
 		
 		aviso.draw();
 		aviso.setColor( Color.MAGENTA );
-		aviso.grow( 0.0, 20 );
+		aviso.grow(diametroDisco/2, diametroDisco/6);
 		
 			
 
