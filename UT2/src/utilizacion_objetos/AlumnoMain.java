@@ -11,7 +11,8 @@ import java.util.Scanner;
 //CURSO: Primero DAW
 
 public class AlumnoMain {
-
+	
+	
 	public static void main(String[] args) {
 		
 		Scanner entradaPorTeclado = new Scanner( System.in );
@@ -55,11 +56,18 @@ public class AlumnoMain {
 		
 		System.out.println( "-------EDAD MEDIA DE LOS ALUMNOS-------" );
 
-		System.out.printf( "%.2f%s", 
-							( (double)alumno1.obtenerEdad() + 
-									  alumno2.obtenerEdad() +
-									  alumno3.obtenerEdad() ) / 3, " años" );
+		System.out.printf( "%.2f%s", mediaEdad( alumno1.obtenerEdad(), alumno2.obtenerEdad(),
+						    alumno3.obtenerEdad() ), " años");
+						
 
 	}
+	
+	//Metodo estatico para calculo de la media de edad de los 3 alumnos
+	public static double mediaEdad( int edad1, int edad2, int edad3 ){
+		
+		double media = (double)( edad1 + edad2 + edad3 ) / 3 ;
+		return media;
+		
+	}//fin del metodo "mediaEdad"
 
 }
