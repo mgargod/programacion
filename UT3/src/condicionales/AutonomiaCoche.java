@@ -39,7 +39,7 @@ public class AutonomiaCoche {
 		
 		autonomia = capacidad * porcentaje * 100 / consumo;
 		
-		System.out.printf("Su autonomía es de %d kilómetros", (int)autonomia );
+		System.out.printf("Su autonomía es de %.0f kilómetros", autonomia );
 		
 		if ( autonomia < 30 ){
 			

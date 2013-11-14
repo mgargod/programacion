@@ -22,14 +22,13 @@ public class OperacionesConDosEnterosSwitch {
 		
 		Scanner teclado = new Scanner(System.in);
 		
-		System.out.print( "Introduzca el primer número: ");
-		numero1 = teclado.nextInt();
+		System.out.println( "Introduzca el primer número, a continuación la operación ( +, -, *, / )"
+				+ " y por último introduzca el segundo número: ");
 		
-		System.out.print( "Introduzca el primer número: ");
+		numero1 = teclado.nextInt();
+		operacion = teclado.next();
 		numero2 = teclado.nextInt();
 		
-		System.out.print( "Introduzca la operación a realizar ( +, -, *, / ): ");
-		operacion = teclado.next();
 		
 		teclado.close();
 					
@@ -38,20 +37,20 @@ public class OperacionesConDosEnterosSwitch {
 		
 		case "+":
 			
-			System.out.printf( "La SUMA de %d y de %d es igual a: %d", numero1, numero2, numero1 + numero2 );
+			System.out.print( " = " + (numero1 + numero2) );
 			break;
 		
 		case "-":
 			
-			System.out.printf( "La RESTA de %d y de %d es igual a: %d", numero1, numero2, numero1 - numero2 );
+			System.out.print( " = " + (numero1 - numero2) );
 			break;
 		
 		case "*":
-			System.out.printf( "El PRODUCTO de %d y de %d es igual a: %d", numero1, numero2, numero1 * numero2 );
+			System.out.print( " = " + (numero1 * numero2) );
 			break;
 		
 		case "/":
-			System.out.printf( "La DIVISION de %d entre %d es igual a: %.2f", numero1, numero2, (double)numero1 / numero2 );
+			System.out.print( " = " + ((double)numero1 / numero2) );
 			break;
 		
 		default:

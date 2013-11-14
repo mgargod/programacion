@@ -27,7 +27,7 @@ public class PalabraOculta {
 		palabraUsuario = teclado.next();
 		teclado.close();
 		
-		if ( palabraUsuario.equals(OCULTA) ){
+		if ( palabraUsuario.toLowerCase().equals(OCULTA) ){
 			
 			mensaje = "¡ENHORABUENA!, ha acertado la palabra oculta";
 		

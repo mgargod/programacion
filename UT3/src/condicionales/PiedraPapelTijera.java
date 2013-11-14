@@ -23,8 +23,7 @@ public class PiedraPapelTijera {
 		String palabraUser = null;
 		int numeroComputer;
 		String palabraComputer = null;
-		String mensaje = "No ha introducido la palabra correctamente. Vuelva a escribir "
-							+ "\"piedra\", \"papel\" o \"tijera\" correctamente.";
+		String mensaje;
 		
 		
 		Scanner teclado = new Scanner(System.in);
@@ -70,52 +69,58 @@ public class PiedraPapelTijera {
 		
 		}
 		
-		if ( palabraUser.equals("piedra") && numeroComputer == 2 ) {
+		else if ( palabraUser.equals("piedra") && numeroComputer == 2 ) {
 			
 			mensaje = "Has perdido";
 		
 		}
 		
-		if ( palabraUser.equals("piedra") && numeroComputer == 3 ) {
+		else if ( palabraUser.equals("piedra") && numeroComputer == 3 ) {
 			
 			mensaje = "Has ganado";
 		
 		}
 		
-		if ( palabraUser.equals("papel") && numeroComputer == 1 ) {
+		else if ( palabraUser.equals("papel") && numeroComputer == 1 ) {
 			
 			mensaje = "Has ganado";
 		
 		}
 		
-		if ( palabraUser.equals("papel") && numeroComputer == 2 ) {
+		else if ( palabraUser.equals("papel") && numeroComputer == 2 ) {
 			
 			mensaje = "Empate";
 		
 		}
 		
-		if ( palabraUser.equals("papel") && numeroComputer == 3 ) {
+		else if ( palabraUser.equals("papel") && numeroComputer == 3 ) {
 			
 			mensaje = "Has perdido";
 		
 		}
 		
-		if ( palabraUser.equals("tijera") && numeroComputer == 1 ) {
+		else if ( palabraUser.equals("tijera") && numeroComputer == 1 ) {
 			
 			mensaje = "Has perdido";
 		
 		}
 		
-		if ( palabraUser.equals("tijera") && numeroComputer == 2 ) {
+		else if ( palabraUser.equals("tijera") && numeroComputer == 2 ) {
 			
 			mensaje = "Has ganado";
 		
 		}
 		
-		if ( palabraUser.equals("tijera") && numeroComputer == 3 ) {
+		else if ( palabraUser.equals("tijera") && numeroComputer == 3 ) {
 			
 			mensaje = "Empate";
 		
+		}
+		
+		else {
+			
+			mensaje = "No ha introducido la palabra correctamente. Vuelva a escribir "
+					+ "\"piedra\", \"papel\" o \"tijera\" correctamente.";
 		}
 		
 		
