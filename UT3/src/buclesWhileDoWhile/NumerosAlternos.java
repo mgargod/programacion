@@ -27,13 +27,14 @@ public class NumerosAlternos {
 			System.out.print( "Introduzca número: " );
 			numero = teclado.nextInt();
 			
-			if( numero < 0 ) break;
+			if( numero >= 0 ) {
 			
 			++contador;
 			
-			if( contador % 2 == 1 )
+				if( contador % 2 == 1 )
 			
-				System.out.println( numero ); 
+					System.out.println( numero ); 
+			}
 		
 		} while ( numero >= 0 );
 		

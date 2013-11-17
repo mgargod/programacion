@@ -41,7 +41,7 @@ public class OperacionesDosEnteros {
 			
 			case "+":
 				
-				System.out.print( " = " + (numero1 + numero2) );
+				System.out.print( "\r = " + (numero1 + numero2) );
 				break;
 			
 			case "-":
