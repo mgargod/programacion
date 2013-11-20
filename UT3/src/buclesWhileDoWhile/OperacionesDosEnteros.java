@@ -34,14 +34,13 @@ public class OperacionesDosEnteros {
 		numero2 = teclado.nextInt();
 			
 		
-		do {
-			
+		do {			
 
 			switch ( operacion ) {
 			
 			case "+":
 				
-				System.out.print( "\r = " + (numero1 + numero2) );
+				System.out.print( " = " + (numero1 + numero2) );
 				break;
 			
 			case "-":
@@ -59,6 +58,7 @@ public class OperacionesDosEnteros {
 			
 			default:
 				
+				System.out.println( "Fin por introducción de operación incorrecta." );
 				condicion = false;
 				break;
 				
@@ -72,14 +72,7 @@ public class OperacionesDosEnteros {
 			}
 				
 		
-		} while ( condicion = operacion.equals("+") || operacion.equals("-") || operacion.equals("*") || 
-				operacion.equals("/"));
-		
-		if ( !condicion ) {
-			
-			System.out.println( "Fin por introducción de operación incorrecta." );
-		
-		}
+		} while ( condicion );
 		
 		teclado.close();
 
