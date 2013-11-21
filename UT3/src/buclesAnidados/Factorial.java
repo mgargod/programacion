@@ -35,23 +35,19 @@ public class Factorial {
 				
 			} while ( numero < 0 );
 			
-			if ( numero != 0 ) {
-				
-				factorial = 1;
+			factorial = 1;
 			
+			if ( numero != 0 ) {
+							
 				for ( int i = numero; i > 0; --i ) {
 				
 					factorial *= i; 
 			
 				}
+			}
 				
 				System.out.printf( "El factorial de %d es igual a %,d\n", numero, factorial );			
 			
-			} else {
-				
-				System.out.print( "El factorial de 0 es igual a 1\n" );
-			
-			}
 			
 			do {
 			
