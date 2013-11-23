@@ -24,7 +24,7 @@ public class Canvas
     private JFrame frame;
     private CanvasComponent component;
 
-    private static final int MIN_SIZE = 1800;
+    private static final int MIN_SIZE = 100;
     private static final int MARGIN = 10;
     private static final int LOCATION_OFFSET = 50;
 
@@ -50,7 +50,7 @@ public class Canvas
         public Dimension getPreferredSize()
         {
             int maxx = MIN_SIZE;
-            int maxy = MIN_SIZE / 2;
+            int maxy = MIN_SIZE;
             if (background != null)
             {
                 maxx = Math.max(maxx, background.getWidth());
