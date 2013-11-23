@@ -19,7 +19,6 @@ import javax.swing.JOptionPane;
 import graphics.Color;
 import graphics.Ellipse;
 import graphics.Rectangle;
-import graphics.Text;
 
 public class Semáforo {
 
@@ -67,76 +66,69 @@ public class Semáforo {
 		poste.fill();
 		
 		
-		//OBJETO circuloVerde: coordenadas, medidas, color, rellenar.
+		do {		
 		
-		Ellipse circuloVerde = new Ellipse( centroX - diametroDisco/2, centroY + diametroDisco * 2 / 3, diametroDisco, diametroDisco ); 
-		circuloVerde.setColor(Color.GREEN);
-		circuloVerde.fill();
-		
-		
-		//OBJETO circuloAmarillo: coordenadas, medidas, color, rellenar. Efecto "parpadeo"
-		//Esto se puede mejorar con un blucle de repetición
-		
-		Ellipse circuloAmarillo = new Ellipse( centroX - diametroDisco/2, centroY - diametroDisco/2, diametroDisco, diametroDisco ); 
-		circuloAmarillo.setColor(Color.YELLOW);
-		
-		Thread.sleep(RETARDO_COLORES); //Retardo para "desaparición Verde" - "aparición Amarillo"
-		
-		circuloVerde.setColor(Color.GRAY);
+			//OBJETO circuloVerde: coordenadas, medidas, color, rellenar.
 			
-		circuloAmarillo.fill();
-		
-		Thread.sleep(PARPADEO); //Retardo para conseguir efecto "parpadeo"
-		
-		circuloAmarillo.setColor(Color.GRAY);
-		
-		Thread.sleep(PARPADEO);
-		
-		circuloAmarillo.setColor(Color.YELLOW);
-		
-		Thread.sleep(PARPADEO);
-		
-		circuloAmarillo.setColor(Color.GRAY);
-		
-		Thread.sleep(PARPADEO);
-		
-		circuloAmarillo.setColor(Color.YELLOW);
-		
-		Thread.sleep(PARPADEO);
-		
-		circuloAmarillo.setColor(Color.GRAY);
-		
-		Thread.sleep(PARPADEO);
-		
-		circuloAmarillo.setColor(Color.YELLOW);
-		
-		
-		//OBJETO circuloRojo: coordenadas, medidas, color, rellenar. Efecto "parpadeo"
-		
-		Ellipse circuloRojo = new Ellipse( centroX - diametroDisco/2, centroY - diametroDisco * 5 / 3, diametroDisco, diametroDisco ); 
-		
-		circuloRojo.setColor(Color.RED);
-		
-		Thread.sleep(PARPADEO);
-		
-		circuloAmarillo.setColor(Color.GRAY);
-		
-		circuloRojo.fill();
-		
-		Thread.sleep(RETARDO_COLORES);
-		
-		circuloRojo.setColor(Color.GRAY);
-		
-		
-		//OBJETO aviso: coordenadas, texto (cadena de caracteres)
-		
-		Text aviso = new Text(centroX + ancho, centroY, "Corte del suministro eléctrico. Cierre la ventana");
-		
-		aviso.draw();
-		aviso.setColor( Color.MAGENTA );
-		aviso.grow(diametroDisco/2, diametroDisco/6);
-		
+			Ellipse circuloVerde = new Ellipse( centroX - diametroDisco/2, centroY + diametroDisco * 2 / 3, diametroDisco, diametroDisco ); 
+			circuloVerde.setColor(Color.GREEN);
+			circuloVerde.fill();
 			
+			
+			//OBJETO circuloAmarillo: coordenadas, medidas, color, rellenar. Efecto "parpadeo"
+			//Esto se puede mejorar con un blucle de repetición
+			
+			Ellipse circuloAmarillo = new Ellipse( centroX - diametroDisco/2, centroY - diametroDisco/2, diametroDisco, diametroDisco ); 
+			circuloAmarillo.setColor(Color.YELLOW);
+			
+			Thread.sleep(RETARDO_COLORES); //Retardo para "desaparición Verde" - "aparición Amarillo"
+			
+			circuloVerde.setColor(Color.GRAY);
+				
+			circuloAmarillo.fill();
+			
+			Thread.sleep(PARPADEO); //Retardo para conseguir efecto "parpadeo"
+			
+			circuloAmarillo.setColor(Color.GRAY);
+			
+			Thread.sleep(PARPADEO);
+			
+			circuloAmarillo.setColor(Color.YELLOW);
+			
+			Thread.sleep(PARPADEO);
+			
+			circuloAmarillo.setColor(Color.GRAY);
+			
+			Thread.sleep(PARPADEO);
+			
+			circuloAmarillo.setColor(Color.YELLOW);
+			
+			Thread.sleep(PARPADEO);
+			
+			circuloAmarillo.setColor(Color.GRAY);
+			
+			Thread.sleep(PARPADEO);
+			
+			circuloAmarillo.setColor(Color.YELLOW);
+			
+			
+			//OBJETO circuloRojo: coordenadas, medidas, color, rellenar. Efecto "parpadeo"
+			
+			Ellipse circuloRojo = new Ellipse( centroX - diametroDisco/2, centroY - diametroDisco * 5 / 3, diametroDisco, diametroDisco ); 
+			
+			circuloRojo.setColor(Color.RED);
+			
+			Thread.sleep(PARPADEO);
+			
+			circuloAmarillo.setColor(Color.GRAY);
+			
+			circuloRojo.fill();
+			
+			Thread.sleep(RETARDO_COLORES);
+			
+			circuloRojo.setColor(Color.GRAY);
+		
+		} while ( true );			
 
 	}
 
