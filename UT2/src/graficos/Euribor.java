@@ -74,7 +74,12 @@ public class Euribor {
 				
 		//CREACION DE TEXTO DE LEYENDA DE EJE VERTICAL
 		
-		Text textoValorEuribor = new Text( origenX - 140, origenY - 10 - 800, "VALOR EURIBOR 2013" );
+		Text textoValorEuribor = new Text( origenX - 140, origenY - 10 - 800, "VALOR EURIBOR 2013" );		
+		
+		//LLAMAR AL METODO PARA DIBUJAR EJES
+		
+		ejeHorizontal.draw();
+		ejeVertical.draw();
 		
 		//BUCLE "FOR" MULTIPROPOSITO		
 		
@@ -108,12 +113,6 @@ public class Euribor {
 			textoMes.draw();
 		
 		} //fin for
-		
-		
-		//LLAMAR AL METODO PARA DIBUJAR EJES
-		
-		ejeHorizontal.draw();
-		ejeVertical.draw();
 		
 		//REPRESENTACION DE DIVISIONES DE EJE VERTICAL
 		
