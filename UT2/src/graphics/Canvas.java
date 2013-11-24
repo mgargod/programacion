@@ -25,7 +25,7 @@ public class Canvas
     private CanvasComponent component;
 
     private static final int MIN_SIZE = 100;
-    private static final int MARGIN = 10;
+    private static final int MARGIN = 0;
     private static final int LOCATION_OFFSET = 50;
 
     class CanvasComponent extends JComponent
