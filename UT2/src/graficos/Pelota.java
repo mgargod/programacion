@@ -27,7 +27,7 @@ public class Pelota {
 		
 		final int ANCHO_PANTALLA = 500;
 		final int ALTO_PANTALLA = 500;
-		final int DIAMETRO_PELOTA = 40;
+		final int DIAMETRO_PELOTA = 50;
 		final int ORIGEN_X = ANCHO_PANTALLA / 2 - DIAMETRO_PELOTA / 2;
 		final int ORIGEN_Y = ALTO_PANTALLA / 2 - DIAMETRO_PELOTA / 2;
 		
@@ -112,6 +112,42 @@ public class Pelota {
 				direccionY = Math.random();				
 				indiceX = (int)(Math.random() * 2); //X positiva o negativa
 				indiceY = 0; //Y negativa
+				pelota.translate(direccionX * signo[indiceX], direccionY * signo[indiceY]);
+				pelota.setColor(colorear());
+				
+			} else if (pelotaAbajo && pelotaIzq) { //Prioridad Abajo
+				
+				direccionX = Math.random();
+				direccionY = Math.random();				
+				indiceX = (int)(Math.random() * 2); //X positiva o negativa
+				indiceY = 0; //Y negativa
+				pelota.translate(direccionX * signo[indiceX], direccionY * signo[indiceY]);
+				pelota.setColor(colorear());
+				
+			} else if (pelotaAbajo && pelotaDcha) { //Prioridad Abajo
+				
+				direccionX = Math.random();
+				direccionY = Math.random();				
+				indiceX = (int)(Math.random() * 2); //X positiva o negativa
+				indiceY = 0; //Y negativa
+				pelota.translate(direccionX * signo[indiceX], direccionY * signo[indiceY]);
+				pelota.setColor(colorear());
+				
+			} else if (pelotaArriba && pelotaDcha) { //Prioridad arriba
+				
+				direccionX = Math.random();
+				direccionY = Math.random();				
+				indiceX = (int)(Math.random() * 2); //X positiva o negativa
+				indiceY = 1; //Y positiva
+				pelota.translate(direccionX * signo[indiceX], direccionY * signo[indiceY]);
+				pelota.setColor(colorear());
+				
+			} else if (pelotaArriba && pelotaIzq) { //Prioridad arriba
+				
+				direccionX = Math.random();
+				direccionY = Math.random();				
+				indiceX = (int)(Math.random() * 2); //X positiva o negativa
+				indiceY = 1; //Y positiva
 				pelota.translate(direccionX * signo[indiceX], direccionY * signo[indiceY]);
 				pelota.setColor(colorear());
 				
