@@ -43,9 +43,9 @@ public class Diana {
 			
 			//CREACION DE COLORES ALEATORIOS
 			
-			int rojo = (int)(Math.random() * 255);
-			int verde = (int)(Math.random() * 255);
-			int azul = (int)(Math.random() * 255);			
+			int rojo = (int)(Math.random() * 256);
+			int verde = (int)(Math.random() * 256);
+			int azul = (int)(Math.random() * 256);			
 			
 			Color colorCirculo = new Color( rojo, verde, azul );
 			

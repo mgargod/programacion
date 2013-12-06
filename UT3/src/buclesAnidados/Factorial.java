@@ -51,7 +51,7 @@ public class Factorial {
 			
 			do {
 			
-				System.out.print( "\n¿Quiere intertar otro número [s/n]? ");
+				System.out.print( "\n¿Quiere insertar otro número [s/n]? ");
 				respuesta = teclado.next().toLowerCase();
 			
 			} while ( !(respuesta.equals("s") || respuesta.equals("n") ) );			
