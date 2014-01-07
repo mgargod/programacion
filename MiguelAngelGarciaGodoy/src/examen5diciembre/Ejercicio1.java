@@ -70,6 +70,28 @@ public class Ejercicio1 {
 			forma += " ";
 		
 		}
+		
+		//CUARTO DIBUJO ARBOL DE NAVIDAD
+		System.out.println();
+		
+		for ( int k = 0; k < n - 1; ++k ) {
+		
+			for ( int i = 0; i < k + 2; ++i ) {
+				
+				for ( int j = 0; j < n - i - 1; ++j ) {
+					
+					System.out.print(" ");
+				}
+				
+				for ( int j = 0; j <= i; ++j ) {
+					
+					System.out.print("@ ");
+				}
+				
+				System.out.println();
+			}
+		
+		}
 
 	}
 
