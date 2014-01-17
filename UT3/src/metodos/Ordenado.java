@@ -23,7 +23,7 @@ public class Ordenado {
 	public static void main(String[] args) {
 
 		int[] vectorPrueba1 = {1,2,3,4,3,7};
-		int[] vectorPrueba2 = {1,2,3,4,6,5};
+		int[] vectorPrueba2 = {1,2,3,4,6,9};
 		boolean estaOrdenado;
 		
 		estaOrdenado = ordenado( vectorPrueba1 );
