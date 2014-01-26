@@ -1,7 +1,5 @@
 package ejercicios;
 
-//import java.io.IOException;
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -30,11 +28,8 @@ public class Ejercicio5 {
 				System.out.print("Introduzca Edad de Alumno nº1: ");				
 				edadAlumno1 = teclado.nextInt();
 				hayDatosErroneos = false;
-			}
-			
-//			catch ( IOException e ){
-				
-//			}
+			}			
+
 			
 			catch ( InputMismatchException entradaInvalida ) {
 				
