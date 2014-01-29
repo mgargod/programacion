@@ -33,7 +33,7 @@ public class Ejercicio1 {
 			
 			catch(ArithmeticException excepcionAritmetica) {
 				
-				System.out.println("LA DIVISION SE DA POR REALIZADA");
+				System.out.println("LA DIVISION SE DA POR REALIZADA Y EL RESULTADO ES: INFINITO");
 				System.out.println(excepcionAritmetica.getMessage());
 				excepcionAritmetica.printStackTrace();
 				String datosError = excepcionAritmetica.toString();
