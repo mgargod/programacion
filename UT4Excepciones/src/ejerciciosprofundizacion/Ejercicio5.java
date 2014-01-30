@@ -33,39 +33,41 @@ public class Ejercicio5 {
 		int contadorNumeros = 0;
 		String letraIntroducida = "";
 		boolean continuarLeyendo = true;
-
-		do {
 		
-			try {
-				
-				for ( int i = 0; i < numeros.length; ++i ) {
-				
+		
+		for ( int i = 0; i < numeros.length; ++i ) {
+
+			do {
+			
+				try {				
+					
 					numeros[i] = leerNumero();
 					++contadorNumeros;				
+				}				
+				
+				catch (InputMismatchException entradaInvalida ) {
+					
+					letraIntroducida = teclado.next();
+					
+					if (letraIntroducida.equals("*") && contadorNumeros == 0) {
+						
+						System.out.println("No ha introducido ningún número.");
+						System.exit(-1);
+					
+					} else if (letraIntroducida.equals("*") && contadorNumeros > 0) {
+						
+						System.out.println("Fin de lectura. Números leídos: " + contadorNumeros);
+						continuarLeyendo = false;
+					
+					} else {
+						
+						System.out.println("Debe introducir números. Inténtelo de nuevo.");
+					}	
 				}
-			}
 			
-			catch (InputMismatchException entradaInvalida ) {
-				
-				letraIntroducida = teclado.next();
-				
-				if (letraIntroducida.equals("*") && contadorNumeros == 0) {
-					
-					System.out.println("No ha introducido ningún número.");
-					System.exit(-1);
-				
-				} else if (letraIntroducida.equals("*") && contadorNumeros > 0) {
-					
-					System.out.println("Fin de lectura. Números leídos: " + contadorNumeros);
-					continuarLeyendo = false;
-				
-				} else {
-					
-					System.out.println("Debe introducir números. Inténtelo de nuevo.");
-				}	
-			}
+			} while ( continuarLeyendo );
 		
-		} while ( continuarLeyendo );
+		}
 		
 		double mayor = numeros[0];
 		

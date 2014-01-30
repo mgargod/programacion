@@ -45,7 +45,7 @@ public class Ejercicio4 {
 				try {
 					
 					numeros[i] = leerNumero();
-					System.out.println("Numero " + (i+1) + "º guardado correctamente.");
+					System.out.println("Numero " + (i+1) + "Nº guardado correctamente.");
 				}
 				
 				catch ( InputMismatchException entradaInvalida ) {
