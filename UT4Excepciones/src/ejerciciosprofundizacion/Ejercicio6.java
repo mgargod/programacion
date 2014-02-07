@@ -12,17 +12,9 @@ public class Ejercicio6 {
 		teclado = new Scanner(System.in);
 		double lado;
 		
-		System.out.print("Introduzca lado: ");
-		
-		try {
+		System.out.print("Introduzca lado: ");		
 			
-			lado = teclado.nextDouble();
-		}
-		
-		catch ( InputMismatchException entradaInvalida ) {
-			
-			throw entradaInvalida;
-		}
+		lado = teclado.nextDouble();
 		
 		return lado;
 	}
