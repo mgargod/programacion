@@ -60,7 +60,7 @@ public class Contacto {
 	}
 
 	public String getNombre() {
-		return nombre;
+		return nombre==null?"-----":nombre;
 	}
 
 	public void setNombre(String nombre) {
@@ -68,7 +68,7 @@ public class Contacto {
 	}
 
 	public String getApellido1() {
-		return apellido1;
+		return apellido1==null?"-----":apellido1;
 	}
 
 	public void setApellido1(String apellido1) {
@@ -76,7 +76,7 @@ public class Contacto {
 	}
 
 	public String getApellido2() {
-		return apellido2;
+		return apellido2==null?"-----":apellido2;
 	}
 
 	public void setApellido2(String apellido2) {
@@ -84,7 +84,7 @@ public class Contacto {
 	}
 
 	public String getDireccion() {
-		return direccion;
+		return direccion==null?"-----":direccion;
 	}
 
 	public void setDireccion(String direccion) {
@@ -92,7 +92,7 @@ public class Contacto {
 	}
 
 	public String getTelFijo() {
-		return telFijo;
+		return telFijo==null?"-----":telFijo;
 	}
 
 	public void setTelFijo(String telFijo) {
@@ -100,7 +100,7 @@ public class Contacto {
 	}
 
 	public String getTelMovil() {
-		return telMovil;
+		return telMovil==null?"-----":telMovil;
 	}
 
 	public void setTelMovil(String telMovil) {
@@ -108,7 +108,7 @@ public class Contacto {
 	}
 
 	public String getMail() {
-		return mail;
+		return mail==null?"-----":mail;
 	}
 
 	public void setMail(String mail) {
