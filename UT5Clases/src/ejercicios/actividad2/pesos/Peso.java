@@ -22,34 +22,42 @@ public class Peso {
 	
 	public Peso ( double peso, String unidadDeMedida ) {		
 		
+		this.peso = peso / factor(unidadDeMedida);
+		
+	}
+	
+	private double factor(String unidadDeMedida) {
+		
+		double factor = 1;
+		
 		switch (unidadDeMedida.toLowerCase()) {
 		
 		case "lb":
-			this.peso = peso;
+			factor = 1;
 			break;
 		case "li":
-			this.peso = peso / LIBRAS_LINGOTES;
+			factor = LIBRAS_LINGOTES;
 			break;
 		case "oz":
-			this.peso = peso / LIBRAS_ONZAS;
+			factor = LIBRAS_ONZAS;
 			break;
 		case "p":
-			this.peso = peso / LIBRAS_PENIQUES;
+			factor = LIBRAS_PENIQUES;
 			break;
 		case "k":
-			this.peso = peso / LIBRAS_KILOGRAMOS;
+			factor = LIBRAS_KILOGRAMOS;
 			break;
 		case "g":
-			this.peso = peso / LIBRAS_GRAMOS;
+			factor = LIBRAS_GRAMOS;
 			break;
 		case "q":
-			this.peso = peso / LIBRAS_QUINTALES;
+			factor = LIBRAS_QUINTALES;
 			break;
 		default:
-			System.out.println("No se ha introducido un valor correcto");		
+			System.out.println("No se ha introducido un valor correcto");
+	    }
 		
-		}			
-		
+		return factor;
 	}
 	
 	public double getLibras() {
@@ -64,25 +72,7 @@ public class Peso {
 	
 	public double getPeso( String unidadDeMedida ) {
 		
-		switch (unidadDeMedida.toLowerCase()) {
-		
-			case "lb":
-				return peso;				
-			case "li":
-				return peso * LIBRAS_LINGOTES;				
-			case "oz":
-				return peso * LIBRAS_ONZAS;
-			case "p":
-				return peso * LIBRAS_PENIQUES;				
-			case "k":
-				return peso * LIBRAS_KILOGRAMOS;				
-			case "g":
-				return peso * LIBRAS_GRAMOS;				
-			case "q":
-				return peso * LIBRAS_QUINTALES;				
-			default:
-				return -1;		
-		}		
+		return this.peso * factor(unidadDeMedida);
 		
 	}
 
