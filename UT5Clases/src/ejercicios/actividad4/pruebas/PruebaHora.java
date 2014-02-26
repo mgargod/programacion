@@ -15,10 +15,10 @@ public class PruebaHora {
 
 	public static void main(String[] args) {
 
-		Hora mihora = new Hora(12,55,32);
-		Hora unahoraycuarto=new Hora(1,59,30);
+		Hora mihora = new Hora(12,180,32);
+		Hora unahoraycuarto=new Hora(1,15,00);
 		mihora.suma(unahoraycuarto);
-		System.out.println(mihora.aCadena());
+		System.out.println(mihora);
 
 	}
 

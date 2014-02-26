@@ -41,7 +41,7 @@ public class Hora {
 		
 	}
 	
-	public String aCadena() {
+	public String toString() {
 		
 		return String.format("%02d:%02d:%02d.", this.getHora(), this.getMinutos(), this.getSegundos());
 	}
@@ -69,7 +69,7 @@ public class Hora {
 		if (minutos < 60) this.minutos = minutos;
 		else {
 			this.minutos = minutos%60;
-			this.setHora(getHora() + 1);
+			this.setHora(getHora() + minutos/60);
 		}
 	}
 
@@ -81,7 +81,7 @@ public class Hora {
 		if (segundos < 60) this.segundos = segundos;
 		else {
 			this.segundos = segundos%60;
-			this.setMinutos(getMinutos() + 1);
+			this.setMinutos(getMinutos() + segundos/60);
 		}
 	}
 }

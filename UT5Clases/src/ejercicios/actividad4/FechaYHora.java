@@ -30,7 +30,7 @@ public class FechaYHora {
 	
 	public String toString() {
 		
-		return String.format("%s - %s", this.fecha, this.hora.aCadena());
+		return String.format("%s - %s", this.fecha, this.hora);
 	}
 	
 	public void siguienteHora() {
