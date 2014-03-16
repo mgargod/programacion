@@ -52,6 +52,13 @@ public class BibliotecaPersonal {
 		this.num_libros--;
 	}
 	
+	public void eliminarLibroDesordenado(int orden) {
+		
+		this.libros[orden] = this.libros[num_libros - 1];
+		this.libros[num_libros - 1] = null;
+		this.num_libros--;
+	}
+	
 	public String toString() {
 		
 		String cadena;
@@ -106,7 +113,8 @@ public class BibliotecaPersonal {
 					miBiblioteca.añadirLibro(l);
 					break;
 				case 3:
-					miBiblioteca.eliminarLibro(ordenLibro());
+					//miBiblioteca.eliminarLibro(ordenLibro());
+					miBiblioteca.eliminarLibroDesordenado(ordenLibro());
 					break;
 			}
 			

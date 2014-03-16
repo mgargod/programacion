@@ -44,6 +44,4 @@ public class FechaYHora {
 			this.hora.setHora(this.hora.getHora() + 1);
 		}
 	}
-	
-
 }

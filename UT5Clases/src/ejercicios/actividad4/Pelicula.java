@@ -108,11 +108,7 @@ public class Pelicula {
 
 	public void setFormato(String formato) {
 		this.formato = formato;
-	}
-	
-
- 	
-	
+	}	
 
 }
 

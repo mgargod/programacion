@@ -72,8 +72,7 @@ public class Filmoteca {
 		String formato = teclado.next();		
 		
 		peliculas[contadorPeliculas] = new Pelicula(titulo,actores,directores,fechaEstreno,formato);
-		++contadorPeliculas;
-		
+		++contadorPeliculas;		
 	}
 	
 	public static void modificar() {
@@ -168,8 +167,7 @@ public class Filmoteca {
 	        	
 	        	
 	        } while (!encontrada);		
-		}	
-		
+		}		
 	}
 	
 	public static void eliminar() {
