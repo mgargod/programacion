@@ -35,14 +35,14 @@ public class Menu {
 		this.numOpciones--;
 	}
 	
-	public void mostrarMenu( String cabecera ) {		
+	public int mostrarMenu( String cabecera ) {		
 		
 		System.out.println("====== " + cabecera + " ======");
 		for(int i = 0; i < numOpciones; ++i) {
 			System.out.println((i + 1) + ". " + this.opciones[i]);
 		}
 		
-		this.opcionElegida();
+		return this.opcionElegida();
 		
 	}
 	
@@ -53,7 +53,7 @@ public class Menu {
 		System.out.print("----> Elija una opción: ");
 		elegida = teclado.nextInt();
 		System.out.println("Ha elegido la opción \"" + this.opciones[elegida - 1] + "\"");		
-		return elegida;		
+		return elegida - 1;		
 	}
 
 	public static void main(String[] args) {
@@ -64,9 +64,13 @@ public class Menu {
 		menu.añadirOpcion("Buscar");
 		menu.añadirOpcion("Salir");
 		
-		menu.mostrarMenu("MI PRIMER MENU");
+		int elegida = menu.mostrarMenu("MI PRIMER MENU");
+		System.out.println("Posición del menú elegida: " + elegida);
+		
 		menu.eliminarOpcion(0);
-		menu.mostrarMenu("MI SEGUNDO MENU");
+		
+		elegida = menu.mostrarMenu("MI SEGUNDO MENU");		
+		System.out.println("Posición del menú elegida: " + elegida);
 
 	}
 
