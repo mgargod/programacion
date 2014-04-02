@@ -5,25 +5,43 @@ import java.util.Scanner;
 public class Ejercicio5_Encriptacion {
 
 	public static void main(String[] args) {
-		
 		Scanner teclado = new Scanner(System.in);
-		char[] caracteres;
-		int[] valores;		
+		System.out.print("Escriba la frase para codificar [ minúsculas y/o números ]: ");
+		char[] caracteres = teclado.nextLine().toCharArray();
 		
-		System.out.print("Escriba una palabra para su encriptación [minúsculas y/o números]: ");
-		caracteres = teclado.next().toCharArray();
-		valores = new int[caracteres.length];
-		
-		for(int i = 0; i < caracteres.length; ++i) {
+		for ( int i = 0; i < caracteres.length; ++i ) {
 			
-			if ( i < caracteres.length - 1) valores[i] = caracteres[i] + caracteres[i+1] + 3;		
+			if ( !(Character.isLowerCase(caracteres[i]) || Character.isDigit(caracteres[i])) && caracteres[i] != ' ') {
 				
-			else valores[i] = caracteres[i] + 4 + 3;					
+				System.out.println("Debe introducir minúsculas y/o números.");
+				System.exit(0);
+			}
 		}
 		
-		System.out.println("====== PALABRA ENCRIPTADA ======");
+		for ( int i = 0; i < caracteres.length; ++i ) {
+			if ( i < caracteres.length -1 )
+				caracteres[i]+=caracteres[i+1] + 3;
+			else
+				caracteres[i]+= 4 + 3;
+		}
 		
-		for (int valor : valores) System.out.print((char)valor);
+		for (char caracter : caracteres)
+			System.out.print(caracter);
+		
+		//Decodificar
+		
+		System.out.println("\nFrase decodificada: ");
+		
+		for ( int i = caracteres.length - 1; i >= 0; --i ) {
+			if ( i == caracteres.length -1 )				
+				caracteres[i]-= (4 + 3);
+			else
+				
+				caracteres[i]-=(caracteres[i+1] + 3);
+		}
+		
+		for (char caracter : caracteres)
+			System.out.print(caracter);
 		
 		teclado.close();
 
