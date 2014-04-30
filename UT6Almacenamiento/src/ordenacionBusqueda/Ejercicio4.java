@@ -36,6 +36,8 @@ public class Ejercicio4 {
 		int[] vector2 = vectorSinRepetidos(vector);
 		
 		System.out.println(Arrays.toString(vector2));
+		
+		
 
 	}
 

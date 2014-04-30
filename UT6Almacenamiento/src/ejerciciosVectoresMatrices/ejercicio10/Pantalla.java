@@ -46,8 +46,7 @@ public class Pantalla {
 				System.out.print(pixel + " ");
 			}
 			System.out.println();
-		}
-		
+		}		
 
 	}
 	
@@ -102,8 +101,7 @@ public class Pantalla {
 				for ( int j = oy - i; j <= oy + i; ++j ) {
 					 pixeles[i][j] = this.caracter;
 				}
-			}		
-			
+			}			
 		}
 	}
 
@@ -112,7 +110,7 @@ public class Pantalla {
 		Pantalla display = new Pantalla();
 		display.mostrar();		
 		//display.rectangulo(2, 2, 3, 6);
-		display.triangulo(1, 7, 8);
+		display.triangulo(1, 6, 4);
 		display.mostrar();	
 		
 	}
