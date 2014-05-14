@@ -41,8 +41,7 @@ public class ContarPalabras {
 		if(frase.length() > 0 && Character.isLetterOrDigit(frase.charAt(frase.length()-1)))
 			cuentaPalabras++;
 		
-		System.out.printf("Total palabras: %d", cuentaPalabras);
-		
+		System.out.printf("Total palabras: %d", cuentaPalabras);	
 		
 	}
 
