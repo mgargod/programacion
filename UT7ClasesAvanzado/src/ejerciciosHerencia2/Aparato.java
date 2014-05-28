@@ -75,6 +75,9 @@ public class Aparato {
 	
 	public double precioPVPRebajado(double rebaja){
 		return this.precioPVP() - this.precioPVP()*rebaja/100;
-	}	
+	}
+	
+	
+	
 
 }

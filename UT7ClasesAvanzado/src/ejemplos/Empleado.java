@@ -7,8 +7,7 @@ public class Empleado {
 	
 	public Empleado (String nombre, double sueldo) {
 		this.nombre = nombre;
-		this.sueldo = sueldo;
-				
+		this.sueldo = sueldo;				
 	}
 
 	public String getNombre() {
@@ -30,8 +29,6 @@ public class Empleado {
 	@Override
 	public String toString() {
 		return "Empleado [nombre=" + nombre + ", sueldo=" + sueldo + "]";
-	}
-	
-	
+	}	
  
 }

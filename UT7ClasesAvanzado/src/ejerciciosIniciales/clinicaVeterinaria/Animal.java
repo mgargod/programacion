@@ -16,8 +16,8 @@ public class Animal {
 	private double peso;
 	private String nombre;
 	private String fechaNacimiento;
-	private String nombreCliente;
-	private String direccionCliente;
+	private Cliente dueño;
+
 	public double getPeso() {
 		return peso;
 	}
@@ -36,18 +36,7 @@ public class Animal {
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	public String getNombreCliente() {
-		return nombreCliente;
-	}
-	public void setNombreCliente(String nombreCliente) {
-		this.nombreCliente = nombreCliente;
-	}
-	public String getDireccionCliente() {
-		return direccionCliente;
-	}
-	public void setDireccionCliente(String direccionCliente) {
-		this.direccionCliente = direccionCliente;
-	}
+
 	
 	
 

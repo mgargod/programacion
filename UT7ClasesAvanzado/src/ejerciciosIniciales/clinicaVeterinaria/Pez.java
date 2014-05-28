@@ -14,19 +14,23 @@ Por su parte, los peces se guarda su número (en realidad la clase guardará los e
 public class Pez extends Animal {
 	
 	private int numeroPeces;
-	private String aguas; //'tropicales' - 'agua fría'
+	private boolean tropicales; //false--> aguas frías
+	
 	public int getNumeroPeces() {
 		return numeroPeces;
+	}
+	public boolean isTropicales() {
+		return tropicales;
+	}
+	public void setTropicales(boolean tropicales) {
+		this.tropicales = tropicales;
 	}
 	public void setNumeroPeces(int numeroPeces) {
 		this.numeroPeces = numeroPeces;
 	}
-	public String getAguas() {
-		return aguas;
-	}
-	public void setAguas(String aguas) {
-		this.aguas = aguas;
-	}
+	
+	
+
 	
 	
 	
